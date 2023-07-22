@@ -1,6 +1,6 @@
-import { User } from "interfaces/user.interface";
-import { Auth } from "interfaces/auth.interface";
-import { randomN, hash } from "utils/crypting";
+import { User } from "../interfaces/user.interface";
+import { Auth } from "../interfaces/auth.interface";
+import { randomN, hash } from "../utils/crypting";
 export const userToauth = (val: User) => {
   const salt = randomN();
   const change: Auth = {

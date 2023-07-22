@@ -7,7 +7,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import path from "path";
-import authRoute from "./routes/auth.route";
+import router from "./router";
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.use(cors({ credentials: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(compression());
-app.use("/auth", authRoute);
+app.use("/", router());
 const server = http.createServer(app);
 
 mongoose
